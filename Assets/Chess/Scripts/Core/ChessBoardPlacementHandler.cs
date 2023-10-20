@@ -10,6 +10,7 @@ using System.Collections.Generic;
 public sealed class ChessBoardPlacementHandler : MonoBehaviour {
     [SerializeField] private GameObject[] _rowsArray;
     [SerializeField] private GameObject _highlightPrefab;
+    [SerializeField] private GameObject _attackHighlightPrefab;
 
     [SerializeField] private Vector4[] _preMoves;
 
@@ -60,6 +61,18 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour {
                 }
             }
         }
+    }
+
+    internal void AttackHighlight(int row, int col)
+    {
+        var tile = GetTile(row, col).transform;
+        if (tile == null)
+        {
+            Debug.LogError("Invalid row or column.");
+            return;
+        }
+
+        Instantiate(_attackHighlightPrefab, tile.transform.position, Quaternion.identity, tile.transform);
     }
 
 

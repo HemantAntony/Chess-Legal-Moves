@@ -45,11 +45,17 @@ namespace Chess.Scripts.Core {
             ChessBoardPlacementHandler.Instance.ClearHighlights();
             if (_item != null)
             {
-                _item.CalculateLegalMoves();
+                _item.CalculateLegalMoves(); // Calculate and return at the same time?
+                _item.CalculateAttackMoves();
                 Debug.Log("Size of possible moves: " + _item.PossibleMoves().Count);
-                foreach (int[] coordinate in  _item.PossibleMoves())
+                foreach (int[] coordinate in _item.PossibleMoves())
                 {
                     ChessBoardPlacementHandler.Instance.Highlight(coordinate[0], coordinate[1]);
+                }
+                Debug.Log("Size of attack moves: " + _item.AttackMoves().Count);
+                foreach (int[] coordinate in _item.AttackMoves())
+                {
+                    ChessBoardPlacementHandler.Instance.AttackHighlight(coordinate[0], coordinate[1]);
                 }
             }
         }

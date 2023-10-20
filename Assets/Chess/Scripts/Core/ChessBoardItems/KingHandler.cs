@@ -11,6 +11,7 @@ public class King : ChessItem
 
     public override void CalculateLegalMoves()
     {
+        _possibleMoves.Clear();
         AddPosition(_row + 1, _column - 1);
         AddPosition(_row + 1, _column);
         AddPosition(_row + 1, _column + 1);
@@ -44,5 +45,18 @@ public class King : ChessItem
                 }
             }
         }
+    }
+
+    public override void CalculateAttackMoves()
+    {
+        _attackMoves.Clear();
+        AddAttackPosition(_row + 1, _column - 1);
+        AddAttackPosition(_row + 1, _column);
+        AddAttackPosition(_row + 1, _column + 1);
+        AddAttackPosition(_row, _column + 1);
+        AddAttackPosition(_row - 1, _column + 1);
+        AddAttackPosition(_row - 1, _column);
+        AddAttackPosition(_row - 1, _column - 1);
+        AddAttackPosition(_row, _column - 1);
     }
 }

@@ -11,6 +11,7 @@ public abstract class ChessItem // Add to name space Chess Core?
     private string _type;
     protected int _row, _column;
     protected List<int[]> _possibleMoves = new List<int[]>();
+    protected List<int[]> _attackMoves = new List<int[]>();
 
     public ChessItem(string type, int row, int col)
     {
@@ -41,7 +42,13 @@ public abstract class ChessItem // Add to name space Chess Core?
         return _possibleMoves;
     }
 
+    public List<int[]> AttackMoves()
+    {
+        return _attackMoves;
+    }
+
     public abstract void CalculateLegalMoves();
+    public abstract void CalculateAttackMoves();
 
     public static ChessItem GetChessItem(int row, int col) // Move function? Incorporate with ChessItemAt
     {
@@ -67,7 +74,7 @@ public abstract class ChessItem // Add to name space Chess Core?
         return false;
     }
 
-    protected bool AddPosition(int row, int col)
+    protected bool AddPosition(int row, int col) // Rename?
     {
         if (row >= 0 && row <= 7 && col >= 0 && col <= 7 && !ChessItemAt(row, col))
         {
@@ -75,6 +82,15 @@ public abstract class ChessItem // Add to name space Chess Core?
             return true;
         }
         return false;
+    }
+
+    protected void AddAttackPosition(int row, int col)
+    {
+        if (row < 0 || row > 7 || col < 0 || col > 7 || !ChessItemAt(row, col) || GetChessItem(row, col).GetChessItemType() != "Enemy")
+        {
+            return;
+        }
+        _attackMoves.Add(new int[] { row, col });
     }
 }
 
@@ -96,6 +112,8 @@ public class ChessBoardItemHandler : MonoBehaviour
                 return new Knight(tag, row, col);
             case "Rook":
                 return new Rook(tag, row, col);
+            case "Enemy":
+                return new Enemy(tag, row, col);
             default:
                 break;
         }

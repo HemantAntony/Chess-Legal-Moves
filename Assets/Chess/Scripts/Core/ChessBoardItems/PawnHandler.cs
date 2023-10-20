@@ -34,4 +34,11 @@ public class Pawn : ChessItem
             }
         }
     }
+
+    public override void CalculateAttackMoves()
+    {
+        _attackMoves.Clear();
+        AddAttackPosition(_row + 1, _column + 1);
+        AddAttackPosition(_row + 1, _column - 1);
+    }
 }

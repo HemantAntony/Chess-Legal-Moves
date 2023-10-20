@@ -11,6 +11,7 @@ public class Queen : ChessItem
 
     public override void CalculateLegalMoves() // Make efficient
     {
+        _possibleMoves.Clear();
         for (int row = _row + 1; row <= 7; row++)
         {
             if (!AddPosition(row, _column))
@@ -71,6 +72,82 @@ public class Queen : ChessItem
         {
             if (!AddPosition(row, column))
             {
+                break;
+            }
+        }
+    }
+
+    public override void CalculateAttackMoves()
+    {
+        _attackMoves.Clear();
+        for (int row = _row + 1; row <= 7; row++)
+        {
+            if (ChessItemAt(row, _column))
+            {
+                AddAttackPosition(row, _column);
+                break;
+            }
+        }
+
+        for (int row = _row - 1; row >= 0; row--)
+        {
+            if (ChessItemAt(row, _column))
+            {
+                AddAttackPosition(row, _column);
+                break;
+            }
+        }
+
+        for (int column = _column + 1; column <= 7; column++)
+        {
+            if (ChessItemAt(_row, column))
+            {
+                AddAttackPosition(_row, column);
+                break;
+            }
+        }
+
+        for (int column = _column - 1; column >= 0; column--)
+        {
+            if (ChessItemAt(_row, column))
+            {
+                AddAttackPosition(_row, column);
+                break;
+            }
+        }
+
+        for (int row = _row + 1, column = _column + 1; row <= 7 && column <= 7; row++, column++)
+        {
+            if (ChessItemAt(row, column))
+            {
+                AddAttackPosition(row, column);
+                break;
+            }
+        }
+
+        for (int row = _row - 1, column = _column + 1; row >= 0 && column <= 7; row--, column++)
+        {
+            if (ChessItemAt(row, column))
+            {
+                AddAttackPosition(row, column);
+                break;
+            }
+        }
+
+        for (int row = _row - 1, column = _column - 1; row >= 0 && column >= 0; row--, column--)
+        {
+            if (ChessItemAt(row, column))
+            {
+                AddAttackPosition(row, column);
+                break;
+            }
+        }
+
+        for (int row = _row + 1, column = _column - 1; row <= 7 && column >= 0; row++, column--)
+        {
+            if (ChessItemAt(row, column))
+            {
+                AddAttackPosition(row, column);
                 break;
             }
         }
