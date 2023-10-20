@@ -9,7 +9,7 @@ public class Pawn : ChessItem
     {
     }
 
-    public override void CalculateLegalMoves() // Implement pawn promotion?, Implement el passant
+    public override void CalculateLegalMoves() // Implement pawn promotion?
     {        
         _possibleMoves.Clear();
         if (_row == 1)

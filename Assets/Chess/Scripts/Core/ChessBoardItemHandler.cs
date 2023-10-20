@@ -1,9 +1,10 @@
 using Chess.Scripts.Core;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ChessItem
+public abstract class ChessItem // Add to name space Chess Core?
 {
     static List<ChessItem> _chessItems = new List<ChessItem>();
 
@@ -19,12 +20,12 @@ public abstract class ChessItem
         _chessItems.Add(this);
     }
 
-    public string getType() // Use get; set
+    public string GetChessItemType() // Use get; set
     {
         return _type;
     }
 
-    public void setType(string type)
+    public void SetChessItemType(string type)
     {
         _type = type;
     }
