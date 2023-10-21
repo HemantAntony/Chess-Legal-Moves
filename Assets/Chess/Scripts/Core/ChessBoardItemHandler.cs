@@ -6,6 +6,21 @@ using UnityEngine;
 
 public abstract class ChessItem // Add to name space Chess Core?, Move to different location
 {
+    protected ChessItemType _type;
+    protected int _row, _col;
+    protected List<int[]> _legalMoves = new List<int[]>();
+    protected List<int[]> _attackMoves = new List<int[]>();
+
+    private static List<ChessItem> _chessItems = new List<ChessItem>();
+
+    public ChessItem(ChessItemType type, int row, int col)
+    {
+        _type = type;
+        _row = row;
+        _col = col;
+        _chessItems.Add(this);
+    }
+
     public enum ChessItemType
     {
         King,
@@ -16,45 +31,6 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
         Pawn,
         Enemy
     }
-
-    static List<ChessItem> _chessItems = new List<ChessItem>();
-
-    private ChessItemType _type;
-    protected int _row, _col;
-    protected List<int[]> _legalMoves = new List<int[]>();
-    protected List<int[]> _attackMoves = new List<int[]>();
-
-    public ChessItem(ChessItemType type, int row, int col)
-    {
-        _type = type;
-        _row = row;
-        _col = col;
-        _chessItems.Add(this);
-    }
-
-    public ChessItemType GetChessItemType()
-    {
-        return _type;
-    }
-
-    public void SetPosition(int row, int col)
-    {
-        _row = row;
-        _col = col;
-    }
-
-    public List<int[]> LegalMoves()
-    {
-        return _legalMoves;
-    }
-
-    public List<int[]> AttackMoves()
-    {
-        return _attackMoves;
-    }
-
-    public abstract void CalculateLegalMoves();
-    public abstract void CalculateAttackMoves();
 
     public static ChessItem GetChessItemAt(int row, int col) // Move function? Incorporate with IsThereChessItemAt
     {
@@ -80,6 +56,27 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
         return false;
     }
 
+    public ChessItemType GetChessItemType()
+    {
+        return _type;
+    }
+
+    public List<int[]> LegalMoves()
+    {
+        return _legalMoves;
+    }
+
+    public List<int[]> AttackMoves()
+    {
+        return _attackMoves;
+    }
+
+    public void SetPosition(int row, int col)
+    {
+        _row = row;
+        _col = col;
+    }
+
     protected bool AddLegalPosition(int row, int col)
     {
         if (row >= 0 && row <= 7 && col >= 0 && col <= 7 && !IsThereChessItemAt(row, col))
@@ -98,6 +95,9 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
         }
         _attackMoves.Add(new int[] { row, col });
     }
+
+    public abstract void CalculateLegalMoves();
+    public abstract void CalculateAttackMoves();
 }
 
 public class ChessBoardItemHandler : MonoBehaviour
