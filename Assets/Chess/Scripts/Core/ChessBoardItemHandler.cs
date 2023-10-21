@@ -9,7 +9,7 @@ public abstract class ChessItem // Add to name space Chess Core?
     static List<ChessItem> _chessItems = new List<ChessItem>();
 
     private string _type;
-    protected int _row, _column;
+    protected int _row, _col;
     protected List<int[]> _possibleMoves = new List<int[]>();
     protected List<int[]> _attackMoves = new List<int[]>();
 
@@ -17,7 +17,7 @@ public abstract class ChessItem // Add to name space Chess Core?
     {
         _type = type;
         _row = row;
-        _column = col;
+        _col = col;
         _chessItems.Add(this);
     }
 
@@ -34,7 +34,7 @@ public abstract class ChessItem // Add to name space Chess Core?
     public void SetPosition(int row, int col)
     {
         _row = row;
-        _column = col;
+        _col = col;
     }
 
     public List<int[]> PossibleMoves()
@@ -54,7 +54,7 @@ public abstract class ChessItem // Add to name space Chess Core?
     {
         foreach (ChessItem chessItem in _chessItems)
         {
-            if (chessItem._row == row && chessItem._column == col)
+            if (chessItem._row == row && chessItem._col == col)
             {
                 return chessItem;
             }
@@ -66,7 +66,7 @@ public abstract class ChessItem // Add to name space Chess Core?
     {
         foreach (ChessItem chessItem in _chessItems)
         {
-            if (chessItem._row == row && chessItem._column == col)
+            if (chessItem._row == row && chessItem._col == col)
             {
                 return true;
             }

@@ -17,9 +17,9 @@ public class Pawn : ChessItem
             for (int i = 0; i < 2; i++)
             {
                 int row = _row + i + 1;
-                if (!ChessItemAt(row, _column))
+                if (!ChessItemAt(row, _col))
                 {
-                    _possibleMoves.Add(new int[] { row, _column });
+                    _possibleMoves.Add(new int[] { row, _col });
                 } else
                 {
                     break;
@@ -28,9 +28,9 @@ public class Pawn : ChessItem
         } else
         {
             int row = _row + 1;
-            if (!ChessItemAt(row, _column) && row <= 7)
+            if (!ChessItemAt(row, _col) && row <= 7)
             {
-                _possibleMoves.Add(new int[] { row, _column });
+                _possibleMoves.Add(new int[] { row, _col });
             }
         }
     }
@@ -38,7 +38,7 @@ public class Pawn : ChessItem
     public override void CalculateAttackMoves()
     {
         _attackMoves.Clear();
-        AddAttackPosition(_row + 1, _column + 1);
-        AddAttackPosition(_row + 1, _column - 1);
+        AddAttackPosition(_row + 1, _col + 1);
+        AddAttackPosition(_row + 1, _col - 1);
     }
 }

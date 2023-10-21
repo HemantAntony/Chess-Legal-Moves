@@ -12,18 +12,18 @@ public class King : ChessItem
     public override void CalculateLegalMoves()
     {
         _possibleMoves.Clear();
-        AddPosition(_row + 1, _column - 1);
-        AddPosition(_row + 1, _column);
-        AddPosition(_row + 1, _column + 1);
-        AddPosition(_row, _column + 1);
-        AddPosition(_row - 1, _column + 1);
-        AddPosition(_row - 1, _column);
-        AddPosition(_row - 1, _column - 1);
-        AddPosition(_row, _column - 1);
+        AddPosition(_row + 1, _col - 1);
+        AddPosition(_row + 1, _col);
+        AddPosition(_row + 1, _col + 1);
+        AddPosition(_row, _col + 1);
+        AddPosition(_row - 1, _col + 1);
+        AddPosition(_row - 1, _col);
+        AddPosition(_row - 1, _col - 1);
+        AddPosition(_row, _col - 1);
 
         if (_row == 0) // Castling
         {
-            for (int column = _column - 1; column >= 0; column--)
+            for (int column = _col - 1; column >= 0; column--)
             {
                 if (column == 0 && GetChessItem(_row, column).GetChessItemType() == "Rook")
                 {
@@ -34,7 +34,7 @@ public class King : ChessItem
                 }
             }
 
-            for (int column = _column + 1; column <= 7; column++)
+            for (int column = _col + 1; column <= 7; column++)
             {
                 if (column == 7 && GetChessItem(_row, column).GetChessItemType() == "Rook")
                 {
@@ -50,13 +50,13 @@ public class King : ChessItem
     public override void CalculateAttackMoves()
     {
         _attackMoves.Clear();
-        AddAttackPosition(_row + 1, _column - 1);
-        AddAttackPosition(_row + 1, _column);
-        AddAttackPosition(_row + 1, _column + 1);
-        AddAttackPosition(_row, _column + 1);
-        AddAttackPosition(_row - 1, _column + 1);
-        AddAttackPosition(_row - 1, _column);
-        AddAttackPosition(_row - 1, _column - 1);
-        AddAttackPosition(_row, _column - 1);
+        AddAttackPosition(_row + 1, _col - 1);
+        AddAttackPosition(_row + 1, _col);
+        AddAttackPosition(_row + 1, _col + 1);
+        AddAttackPosition(_row, _col + 1);
+        AddAttackPosition(_row - 1, _col + 1);
+        AddAttackPosition(_row - 1, _col);
+        AddAttackPosition(_row - 1, _col - 1);
+        AddAttackPosition(_row, _col - 1);
     }
 }

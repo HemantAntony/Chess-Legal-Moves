@@ -14,7 +14,7 @@ public class Queen : ChessItem
         _possibleMoves.Clear();
         for (int row = _row + 1; row <= 7; row++)
         {
-            if (!AddPosition(row, _column))
+            if (!AddPosition(row, _col))
             {
                 break;
             }
@@ -22,13 +22,13 @@ public class Queen : ChessItem
 
         for (int row = _row - 1; row >= 0; row--)
         {
-            if (!AddPosition(row, _column))
+            if (!AddPosition(row, _col))
             {
                 break;
             }
         }
 
-        for (int column = _column + 1; column <= 7; column++)
+        for (int column = _col + 1; column <= 7; column++)
         {
             if (!AddPosition(_row, column))
             {
@@ -36,7 +36,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int column = _column - 1; column >= 0; column--)
+        for (int column = _col - 1; column >= 0; column--)
         {
             if (!AddPosition(_row, column))
             {
@@ -44,7 +44,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row + 1, column = _column + 1; row <= 7 && column <= 7; row++, column++)
+        for (int row = _row + 1, column = _col + 1; row <= 7 && column <= 7; row++, column++)
         {
             if (!AddPosition(row, column))
             {
@@ -52,7 +52,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column + 1; row >= 0 && column <= 7; row--, column++)
+        for (int row = _row - 1, column = _col + 1; row >= 0 && column <= 7; row--, column++)
         {
             if (!AddPosition(row, column))
             {
@@ -60,7 +60,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column - 1; row >= 0 && column >= 0; row--, column--)
+        for (int row = _row - 1, column = _col - 1; row >= 0 && column >= 0; row--, column--)
         {
             if (!AddPosition(row, column))
             {
@@ -68,7 +68,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row + 1, column = _column - 1; row <= 7 && column >= 0; row++, column--)
+        for (int row = _row + 1, column = _col - 1; row <= 7 && column >= 0; row++, column--)
         {
             if (!AddPosition(row, column))
             {
@@ -82,23 +82,23 @@ public class Queen : ChessItem
         _attackMoves.Clear();
         for (int row = _row + 1; row <= 7; row++)
         {
-            if (ChessItemAt(row, _column))
+            if (ChessItemAt(row, _col))
             {
-                AddAttackPosition(row, _column);
+                AddAttackPosition(row, _col);
                 break;
             }
         }
 
         for (int row = _row - 1; row >= 0; row--)
         {
-            if (ChessItemAt(row, _column))
+            if (ChessItemAt(row, _col))
             {
-                AddAttackPosition(row, _column);
+                AddAttackPosition(row, _col);
                 break;
             }
         }
 
-        for (int column = _column + 1; column <= 7; column++)
+        for (int column = _col + 1; column <= 7; column++)
         {
             if (ChessItemAt(_row, column))
             {
@@ -107,7 +107,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int column = _column - 1; column >= 0; column--)
+        for (int column = _col - 1; column >= 0; column--)
         {
             if (ChessItemAt(_row, column))
             {
@@ -116,7 +116,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row + 1, column = _column + 1; row <= 7 && column <= 7; row++, column++)
+        for (int row = _row + 1, column = _col + 1; row <= 7 && column <= 7; row++, column++)
         {
             if (ChessItemAt(row, column))
             {
@@ -125,7 +125,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column + 1; row >= 0 && column <= 7; row--, column++)
+        for (int row = _row - 1, column = _col + 1; row >= 0 && column <= 7; row--, column++)
         {
             if (ChessItemAt(row, column))
             {
@@ -134,7 +134,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column - 1; row >= 0 && column >= 0; row--, column--)
+        for (int row = _row - 1, column = _col - 1; row >= 0 && column >= 0; row--, column--)
         {
             if (ChessItemAt(row, column))
             {
@@ -143,7 +143,7 @@ public class Queen : ChessItem
             }
         }
 
-        for (int row = _row + 1, column = _column - 1; row <= 7 && column >= 0; row++, column--)
+        for (int row = _row + 1, column = _col - 1; row <= 7 && column >= 0; row++, column--)
         {
             if (ChessItemAt(row, column))
             {

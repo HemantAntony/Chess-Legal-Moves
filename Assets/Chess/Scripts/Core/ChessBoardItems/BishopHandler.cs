@@ -13,7 +13,7 @@ public class Bishop : ChessItem
     public override void CalculateLegalMoves()
     {
         _possibleMoves.Clear();
-        for (int row = _row + 1, column = _column + 1; row <= 7 && column <= 7; row++, column++)
+        for (int row = _row + 1, column = _col + 1; row <= 7 && column <= 7; row++, column++)
         {
             if (!AddPosition(row, column))
             {
@@ -21,7 +21,7 @@ public class Bishop : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column + 1; row >= 0 && column <= 7; row--, column++)
+        for (int row = _row - 1, column = _col + 1; row >= 0 && column <= 7; row--, column++)
         {
             if (!AddPosition(row, column))
             {
@@ -29,7 +29,7 @@ public class Bishop : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column - 1; row >= 0 && column >= 0; row--, column--)
+        for (int row = _row - 1, column = _col - 1; row >= 0 && column >= 0; row--, column--)
         {
             if (!AddPosition(row, column))
             {
@@ -37,7 +37,7 @@ public class Bishop : ChessItem
             }
         }
 
-        for (int row = _row + 1, column = _column - 1; row <= 7 && column >= 0; row++, column--)
+        for (int row = _row + 1, column = _col - 1; row <= 7 && column >= 0; row++, column--)
         {
             if (!AddPosition(row, column))
             {
@@ -49,7 +49,7 @@ public class Bishop : ChessItem
     public override void CalculateAttackMoves()
     {
         _attackMoves.Clear();
-        for (int row = _row + 1, column = _column + 1; row <= 7 && column <= 7; row++, column++)
+        for (int row = _row + 1, column = _col + 1; row <= 7 && column <= 7; row++, column++)
         {
             if (ChessItemAt(row, column))
             {
@@ -58,7 +58,7 @@ public class Bishop : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column + 1; row >= 0 && column <= 7; row--, column++)
+        for (int row = _row - 1, column = _col + 1; row >= 0 && column <= 7; row--, column++)
         {
             if (ChessItemAt(row, column))
             {
@@ -67,7 +67,7 @@ public class Bishop : ChessItem
             }
         }
 
-        for (int row = _row - 1, column = _column - 1; row >= 0 && column >= 0; row--, column--)
+        for (int row = _row - 1, column = _col - 1; row >= 0 && column >= 0; row--, column--)
         {
             if (ChessItemAt(row, column))
             {
@@ -76,7 +76,7 @@ public class Bishop : ChessItem
             }
         }
 
-        for (int row = _row + 1, column = _column - 1; row <= 7 && column >= 0; row++, column--)
+        for (int row = _row + 1, column = _col - 1; row <= 7 && column >= 0; row++, column--)
         {
             if (ChessItemAt(row, column))
             {
