@@ -9,29 +9,21 @@ public class Pawn : ChessItem
     {
     }
 
-    public override void CalculateLegalMoves() // Implement pawn promotion?
+    public override void CalculateLegalMoves()
     {        
         _legalMoves.Clear();
         if (_row == 1)
         {
             for (int i = 0; i < 2; i++)
             {
-                int row = _row + i + 1;
-                if (!IsThereChessItemAt(row, _col))
-                {
-                    _legalMoves.Add(new int[] { row, _col }); // Use AddLegalPosition
-                } else
+                if (!AddLegalPosition(_row + i + 1, _col))
                 {
                     break;
                 }
             }
         } else
         {
-            int row = _row + 1;
-            if (!IsThereChessItemAt(row, _col) && row <= 7)
-            {
-                _legalMoves.Add(new int[] { row, _col });
-            }
+            AddLegalPosition(_row + 1, _col);
         }
     }
 

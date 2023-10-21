@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 7
-  column: 7
+  column: 0
 --- !u!212 &31883627
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
-  column: 3
+  column: 0
 --- !u!61 &60290585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -590,7 +590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 6
-  column: 6
+  column: 0
 --- !u!212 &150836302
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -995,7 +995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 6
-  column: 2
+  column: 0
 --- !u!212 &236137213
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1210,7 +1210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
-  column: 7
+  column: 0
 --- !u!61 &280411639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1569,7 +1569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 1
-  column: 3
+  column: 2
 --- !u!61 &309589167
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1856,7 +1856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
-  column: 2
+  column: 0
 --- !u!61 &354243242
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2197,7 +2197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 1
-  column: 1
+  column: 7
 --- !u!212 &409402680
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
-  column: 4
+  column: 0
 --- !u!61 &451512800
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2702,7 +2702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 7
-  column: 6
+  column: 0
 --- !u!212 &469134276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3150,7 +3150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 6
-  column: 5
+  column: 0
 --- !u!212 &651831202
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3247,7 +3247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 6
-  column: 4
+  column: 0
 --- !u!212 &739743833
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3443,7 +3443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
-  column: 6
+  column: 0
 --- !u!61 &755527378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3515,7 +3515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 7
-  column: 3
+  column: 0
 --- !u!212 &780796568
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3746,7 +3746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 6
-  column: 3
+  column: 0
 --- !u!212 &910445299
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3895,7 +3895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 1
-  column: 7
+  column: 6
 --- !u!61 &969461839
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4153,7 +4153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 1
-  column: 4
+  column: 3
 --- !u!61 &1126575669
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4478,7 +4478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
-  column: 5
+  column: 0
 --- !u!61 &1285433207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4833,7 +4833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 0
-  column: 1
+  column: 0
 --- !u!61 &1342563080
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5222,7 +5222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 1
-  column: 5
+  column: 4
 --- !u!61 &1486999846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5498,7 +5498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 7
-  column: 2
+  column: 0
 --- !u!212 &1623538831
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5960,7 +5960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 7
-  column: 1
+  column: 0
 --- !u!212 &1702392857
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6109,7 +6109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 1
-  column: 6
+  column: 5
 --- !u!61 &1707383402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6233,7 +6233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 1
-  column: 2
+  column: 1
 --- !u!61 &1723691869
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6669,7 +6669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 7
-  column: 5
+  column: 0
 --- !u!212 &1871254172
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6766,7 +6766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 6
-  column: 1
+  column: 0
 --- !u!212 &1895287872
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6987,7 +6987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 7
-  column: 4
+  column: 0
 --- !u!212 &2013680630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7218,7 +7218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   row: 6
-  column: 7
+  column: 0
 --- !u!212 &2095127836
 SpriteRenderer:
   m_ObjectHideFlags: 0
