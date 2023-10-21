@@ -76,7 +76,7 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour {
     }
 
 
-    private void MovePieceHandler(ChessPlayerPlacementHandler item, int row, int col) // Fix column to col
+    private void MovePieceHandler(ChessPlayerPlacementHandler item, int row, int col)
     {
         item.row = row;
         item.column = col;

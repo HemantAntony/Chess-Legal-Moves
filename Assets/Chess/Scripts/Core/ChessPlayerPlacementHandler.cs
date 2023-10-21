@@ -24,7 +24,7 @@ namespace Chess.Scripts.Core {
             return null;
         }
 
-        public void UpdatePosition() // call in Start?
+        public void UpdatePosition()
         {
             transform.position = ChessBoardPlacementHandler.Instance.GetTile(row, column).transform.position;
         }
@@ -35,7 +35,7 @@ namespace Chess.Scripts.Core {
         }
 
         private void Start() {
-            transform.position = ChessBoardPlacementHandler.Instance.GetTile(row, column).transform.position;
+            UpdatePosition();
             _item = ChessBoardItemHandler.MakeChessItem(gameObject.tag, row, column);
             _handlers.Add(this);
         }
