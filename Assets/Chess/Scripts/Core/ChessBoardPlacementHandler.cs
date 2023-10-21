@@ -76,12 +76,12 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour {
     }
 
 
-    private void MovePieceHandler(ChessPlayerPlacementHandler item, int row, int col)
+    private void MovePieceHandler(ChessPlayerPlacementHandler handler, int row, int col)
     {
-        item.row = row;
-        item.column = col;
-        item.UpdatePosition();
-        item.ChessItem().SetPosition(row, col);
+        handler.row = row;
+        handler.column = col;
+        handler.UpdatePosition();
+        handler.Item().SetPosition(row, col);
     }
 
     private void Start()

@@ -29,14 +29,14 @@ namespace Chess.Scripts.Core {
             transform.position = ChessBoardPlacementHandler.Instance.GetTile(row, column).transform.position;
         }
 
-        public ChessItem ChessItem()
+        public ChessItem Item()
         {
             return _item;
         }
 
         private void Start() {
             UpdatePosition();
-            _item = ChessBoardItemHandler.New(gameObject.tag, row, column);
+            _item = ChessItem.New(gameObject.tag, row, column);
             _handlers.Add(this);
         }
 
