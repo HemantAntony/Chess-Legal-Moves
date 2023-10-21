@@ -25,10 +25,10 @@ public class King : ChessItem
         {
             for (int col = _col - 1; col >= 0; col--)
             {
-                if (col == 0 && GetChessItem(_row, col).GetChessItemType() == "Rook")
+                if (col == 0 && GetChessItemAt(_row, col).GetChessItemAtType() == "Rook")
                 {
                     AddPosition(_row, 2);
-                } else if (ChessItemAt(_row, col))
+                } else if (IsThereChessItemAt(_row, col))
                 {
                     break;
                 }
@@ -36,10 +36,10 @@ public class King : ChessItem
 
             for (int col = _col + 1; col <= 7; col++)
             {
-                if (col == 7 && GetChessItem(_row, col).GetChessItemType() == "Rook")
+                if (col == 7 && GetChessItemAt(_row, col).GetChessItemAtType() == "Rook")
                 {
                     AddPosition(_row, 6);
-                } else if (ChessItemAt(_row, col))
+                } else if (IsThereChessItemAt(_row, col))
                 {
                     break;
                 }

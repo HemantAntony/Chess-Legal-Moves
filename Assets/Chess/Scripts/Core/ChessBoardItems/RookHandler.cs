@@ -50,7 +50,7 @@ public class Rook : ChessItem
         _attackMoves.Clear();
         for (int row = _row + 1; row <= 7; row++)
         {
-            if (ChessItemAt(row, _col))
+            if (IsThereChessItemAt(row, _col))
             {
                 AddAttackPosition(row, _col);
                 break;
@@ -59,7 +59,7 @@ public class Rook : ChessItem
 
         for (int row = _row - 1; row >= 0; row--)
         {
-            if (ChessItemAt(row, _col))
+            if (IsThereChessItemAt(row, _col))
             {
                 AddAttackPosition(row, _col);
                 break;
@@ -68,7 +68,7 @@ public class Rook : ChessItem
 
         for (int col = _col + 1; col <= 7; col++)
         {
-            if (ChessItemAt(_row, col))
+            if (IsThereChessItemAt(_row, col))
             {
                 AddAttackPosition(_row, col);
                 break;
@@ -77,7 +77,7 @@ public class Rook : ChessItem
 
         for (int col = _col - 1; col >= 0; col--)
         {
-            if (ChessItemAt(_row, col))
+            if (IsThereChessItemAt(_row, col))
             {
                 AddAttackPosition(_row, col);
                 break;

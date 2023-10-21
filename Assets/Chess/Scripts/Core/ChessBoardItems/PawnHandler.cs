@@ -17,7 +17,7 @@ public class Pawn : ChessItem
             for (int i = 0; i < 2; i++)
             {
                 int row = _row + i + 1;
-                if (!ChessItemAt(row, _col))
+                if (!IsThereChessItemAt(row, _col))
                 {
                     _possibleMoves.Add(new int[] { row, _col });
                 } else
@@ -28,7 +28,7 @@ public class Pawn : ChessItem
         } else
         {
             int row = _row + 1;
-            if (!ChessItemAt(row, _col) && row <= 7)
+            if (!IsThereChessItemAt(row, _col) && row <= 7)
             {
                 _possibleMoves.Add(new int[] { row, _col });
             }

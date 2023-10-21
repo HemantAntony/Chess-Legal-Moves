@@ -8,7 +8,7 @@ public abstract class ChessItem // Add to name space Chess Core?
 {
     static List<ChessItem> _chessItems = new List<ChessItem>();
 
-    private string _type;
+    private string _type; // Implement Enum
     protected int _row, _col;
     protected List<int[]> _possibleMoves = new List<int[]>();
     protected List<int[]> _attackMoves = new List<int[]>();
@@ -21,7 +21,7 @@ public abstract class ChessItem // Add to name space Chess Core?
         _chessItems.Add(this);
     }
 
-    public string GetChessItemType()
+    public string GetChessItemAtType()
     {
         return _type;
     }
@@ -45,7 +45,7 @@ public abstract class ChessItem // Add to name space Chess Core?
     public abstract void CalculateLegalMoves();
     public abstract void CalculateAttackMoves();
 
-    public static ChessItem GetChessItem(int row, int col) // Move function? Incorporate with ChessItemAt
+    public static ChessItem GetChessItemAt(int row, int col) // Move function? Incorporate with IsThereChessItemAt
     {
         foreach (ChessItem chessItem in _chessItems)
         {
@@ -57,7 +57,7 @@ public abstract class ChessItem // Add to name space Chess Core?
         return null;
     }
 
-    public static bool ChessItemAt(int row, int col) // Move function?, Rename function?
+    public static bool IsThereChessItemAt(int row, int col) // Move function?
     {
         foreach (ChessItem chessItem in _chessItems)
         {
@@ -71,7 +71,7 @@ public abstract class ChessItem // Add to name space Chess Core?
 
     protected bool AddPosition(int row, int col) // Rename?
     {
-        if (row >= 0 && row <= 7 && col >= 0 && col <= 7 && !ChessItemAt(row, col))
+        if (row >= 0 && row <= 7 && col >= 0 && col <= 7 && !IsThereChessItemAt(row, col))
         {
             _possibleMoves.Add(new int[] { row, col });
             return true;
@@ -81,7 +81,7 @@ public abstract class ChessItem // Add to name space Chess Core?
 
     protected void AddAttackPosition(int row, int col)
     {
-        if (row < 0 || row > 7 || col < 0 || col > 7 || !ChessItemAt(row, col) || GetChessItem(row, col).GetChessItemType() != "Enemy")
+        if (row < 0 || row > 7 || col < 0 || col > 7 || !IsThereChessItemAt(row, col) || GetChessItemAt(row, col).GetChessItemAtType() != "Enemy")
         {
             return;
         }
