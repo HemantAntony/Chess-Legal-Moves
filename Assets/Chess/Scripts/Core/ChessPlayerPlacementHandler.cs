@@ -13,7 +13,7 @@ namespace Chess.Scripts.Core {
 
         public static ChessPlayerPlacementHandler GetHandler(int requiredRow, int requiredCol)
         {
-            foreach(ChessPlayerPlacementHandler handler in _handlers)
+            foreach (ChessPlayerPlacementHandler handler in _handlers)
             {
                 if (handler.row == requiredRow && handler.column == requiredCol)
                 {

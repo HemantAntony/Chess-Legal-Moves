@@ -28,7 +28,8 @@ public class King : ChessItem
                 if (col == 0 && GetChessItemAt(_row, col).GetChessItemType() == ChessItemType.Rook)
                 {
                     AddLegalPosition(_row, 1);
-                } else if (IsThereChessItemAt(_row, col))
+                }
+                else if (IsThereChessItemAt(_row, col))
                 {
                     break;
                 }
@@ -39,7 +40,8 @@ public class King : ChessItem
                 if (col == 7 && GetChessItemAt(_row, col).GetChessItemType() == ChessItemType.Rook)
                 {
                     AddLegalPosition(_row, 5);
-                } else if (IsThereChessItemAt(_row, col))
+                }
+                else if (IsThereChessItemAt(_row, col))
                 {
                     break;
                 }

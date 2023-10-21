@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class Pawn : ChessItem
 {
-    public Pawn(ChessItemType type, int row, int col):base(type, row, col)
+    public Pawn(ChessItemType type, int row, int col) : base(type, row, col)
     {
     }
 
     public override void CalculateLegalMoves()
-    {        
+    {
         _legalMoves.Clear();
         if (_row == 1)
         {
@@ -21,7 +21,8 @@ public class Pawn : ChessItem
                     break;
                 }
             }
-        } else
+        }
+        else
         {
             AddLegalPosition(_row + 1, _col);
         }
