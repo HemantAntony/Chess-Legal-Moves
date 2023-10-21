@@ -23,40 +23,10 @@ public class Bishop : ChessItem
     public override void CalculateAttackMoves()
     {
         _attackMoves.Clear();
-        for (int row = _row + 1, col = _col + 1; row <= 7 && col <= 7; row++, col++)
-        {
-            if (IsThereChessItemAt(row, col))
-            {
-                AddAttackPosition(row, col);
-                break;
-            }
-        }
 
-        for (int row = _row - 1, col = _col + 1; row >= 0 && col <= 7; row--, col++)
-        {
-            if (IsThereChessItemAt(row, col))
-            {
-                AddAttackPosition(row, col);
-                break;
-            }
-        }
-
-        for (int row = _row - 1, col = _col - 1; row >= 0 && col >= 0; row--, col--)
-        {
-            if (IsThereChessItemAt(row, col))
-            {
-                AddAttackPosition(row, col);
-                break;
-            }
-        }
-
-        for (int row = _row + 1, col = _col - 1; row <= 7 && col >= 0; row++, col--)
-        {
-            if (IsThereChessItemAt(row, col))
-            {
-                AddAttackPosition(row, col);
-                break;
-            }
-        }
+        AddAttackPositions(new Vector2Int(1, 1));
+        AddAttackPositions(new Vector2Int(1, -1));
+        AddAttackPositions(new Vector2Int(-1, -1));
+        AddAttackPositions(new Vector2Int(-1, 1));
     }
 }
