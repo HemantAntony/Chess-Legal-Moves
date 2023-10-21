@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Rook : ChessItem
 {
-    public Rook(string type, int row, int column) : base(type, row, column)
+    public Rook(string type, int row, int col) : base(type, row, col)
     {
     }
 
@@ -28,17 +28,17 @@ public class Rook : ChessItem
             }
         }
 
-        for (int column = _col + 1; column <= 7; column++)
+        for (int col = _col + 1; col <= 7; col++)
         {
-            if (!AddPosition(_row, column))
+            if (!AddPosition(_row, col))
             {
                 break;
             }
         }
 
-        for (int column = _col - 1; column >= 0; column--)
+        for (int col = _col - 1; col >= 0; col--)
         {
-            if (!AddPosition(_row, column))
+            if (!AddPosition(_row, col))
             {
                 break;
             }
@@ -66,20 +66,20 @@ public class Rook : ChessItem
             }
         }
 
-        for (int column = _col + 1; column <= 7; column++)
+        for (int col = _col + 1; col <= 7; col++)
         {
-            if (ChessItemAt(_row, column))
+            if (ChessItemAt(_row, col))
             {
-                AddAttackPosition(_row, column);
+                AddAttackPosition(_row, col);
                 break;
             }
         }
 
-        for (int column = _col - 1; column >= 0; column--)
+        for (int col = _col - 1; col >= 0; col--)
         {
-            if (ChessItemAt(_row, column))
+            if (ChessItemAt(_row, col))
             {
-                AddAttackPosition(_row, column);
+                AddAttackPosition(_row, col);
                 break;
             }
         }

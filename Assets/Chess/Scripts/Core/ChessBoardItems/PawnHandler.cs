@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Pawn : ChessItem
 {
-    public Pawn(string type, int row, int column):base(type, row, column)
+    public Pawn(string type, int row, int col):base(type, row, col)
     {
     }
 

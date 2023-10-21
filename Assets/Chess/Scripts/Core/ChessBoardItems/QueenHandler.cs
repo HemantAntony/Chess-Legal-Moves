@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Queen : ChessItem
 {
-    public Queen(string type, int row, int column) : base(type, row, column)
+    public Queen(string type, int row, int col) : base(type, row, col)
     {
     }
 
@@ -28,49 +28,49 @@ public class Queen : ChessItem
             }
         }
 
-        for (int column = _col + 1; column <= 7; column++)
+        for (int col = _col + 1; col <= 7; col++)
         {
-            if (!AddPosition(_row, column))
+            if (!AddPosition(_row, col))
             {
                 break;
             }
         }
 
-        for (int column = _col - 1; column >= 0; column--)
+        for (int col = _col - 1; col >= 0; col--)
         {
-            if (!AddPosition(_row, column))
+            if (!AddPosition(_row, col))
             {
                 break;
             }
         }
 
-        for (int row = _row + 1, column = _col + 1; row <= 7 && column <= 7; row++, column++)
+        for (int row = _row + 1, col = _col + 1; row <= 7 && col <= 7; row++, col++)
         {
-            if (!AddPosition(row, column))
+            if (!AddPosition(row, col))
             {
                 break;
             }
         }
 
-        for (int row = _row - 1, column = _col + 1; row >= 0 && column <= 7; row--, column++)
+        for (int row = _row - 1, col = _col + 1; row >= 0 && col <= 7; row--, col++)
         {
-            if (!AddPosition(row, column))
+            if (!AddPosition(row, col))
             {
                 break;
             }
         }
 
-        for (int row = _row - 1, column = _col - 1; row >= 0 && column >= 0; row--, column--)
+        for (int row = _row - 1, col = _col - 1; row >= 0 && col >= 0; row--, col--)
         {
-            if (!AddPosition(row, column))
+            if (!AddPosition(row, col))
             {
                 break;
             }
         }
 
-        for (int row = _row + 1, column = _col - 1; row <= 7 && column >= 0; row++, column--)
+        for (int row = _row + 1, col = _col - 1; row <= 7 && col >= 0; row++, col--)
         {
-            if (!AddPosition(row, column))
+            if (!AddPosition(row, col))
             {
                 break;
             }
@@ -98,56 +98,56 @@ public class Queen : ChessItem
             }
         }
 
-        for (int column = _col + 1; column <= 7; column++)
+        for (int col = _col + 1; col <= 7; col++)
         {
-            if (ChessItemAt(_row, column))
+            if (ChessItemAt(_row, col))
             {
-                AddAttackPosition(_row, column);
+                AddAttackPosition(_row, col);
                 break;
             }
         }
 
-        for (int column = _col - 1; column >= 0; column--)
+        for (int col = _col - 1; col >= 0; col--)
         {
-            if (ChessItemAt(_row, column))
+            if (ChessItemAt(_row, col))
             {
-                AddAttackPosition(_row, column);
+                AddAttackPosition(_row, col);
                 break;
             }
         }
 
-        for (int row = _row + 1, column = _col + 1; row <= 7 && column <= 7; row++, column++)
+        for (int row = _row + 1, col = _col + 1; row <= 7 && col <= 7; row++, col++)
         {
-            if (ChessItemAt(row, column))
+            if (ChessItemAt(row, col))
             {
-                AddAttackPosition(row, column);
+                AddAttackPosition(row, col);
                 break;
             }
         }
 
-        for (int row = _row - 1, column = _col + 1; row >= 0 && column <= 7; row--, column++)
+        for (int row = _row - 1, col = _col + 1; row >= 0 && col <= 7; row--, col++)
         {
-            if (ChessItemAt(row, column))
+            if (ChessItemAt(row, col))
             {
-                AddAttackPosition(row, column);
+                AddAttackPosition(row, col);
                 break;
             }
         }
 
-        for (int row = _row - 1, column = _col - 1; row >= 0 && column >= 0; row--, column--)
+        for (int row = _row - 1, col = _col - 1; row >= 0 && col >= 0; row--, col--)
         {
-            if (ChessItemAt(row, column))
+            if (ChessItemAt(row, col))
             {
-                AddAttackPosition(row, column);
+                AddAttackPosition(row, col);
                 break;
             }
         }
 
-        for (int row = _row + 1, column = _col - 1; row <= 7 && column >= 0; row++, column--)
+        for (int row = _row + 1, col = _col - 1; row <= 7 && col >= 0; row++, col--)
         {
-            if (ChessItemAt(row, column))
+            if (ChessItemAt(row, col))
             {
-                AddAttackPosition(row, column);
+                AddAttackPosition(row, col);
                 break;
             }
         }

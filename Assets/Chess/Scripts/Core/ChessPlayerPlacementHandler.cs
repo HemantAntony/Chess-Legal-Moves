@@ -11,11 +11,11 @@ namespace Chess.Scripts.Core {
 
         private static List<ChessPlayerPlacementHandler> _handlers = new List<ChessPlayerPlacementHandler>();
 
-        public static ChessPlayerPlacementHandler GetHandler(int requiredRow, int requiredColumn)
+        public static ChessPlayerPlacementHandler GetHandler(int requiredRow, int requiredCol)
         {
             foreach(ChessPlayerPlacementHandler handler in _handlers)
             {
-                if (handler.row == requiredRow && handler.column == requiredColumn)
+                if (handler.row == requiredRow && handler.column == requiredCol)
                 {
                     return handler;
                 }
