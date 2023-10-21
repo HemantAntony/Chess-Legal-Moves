@@ -90,14 +90,7 @@ public abstract class ChessItem
 
     public static bool IsThereChessItemAt(int row, int col)
     {
-        foreach (ChessItem chessItem in _chessItems)
-        {
-            if (chessItem._row == row && chessItem._col == col)
-            {
-                return true;
-            }
-        }
-        return false;
+        return GetChessItemAt(row, col) != null;
     }
 
     public ChessItemType GetChessItemType()
