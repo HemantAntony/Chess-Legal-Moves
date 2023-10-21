@@ -11,7 +11,7 @@ public class Pawn : ChessItem
 
     public override void CalculateLegalMoves() // Implement pawn promotion?
     {        
-        _possibleMoves.Clear();
+        _legalMoves.Clear();
         if (_row == 1)
         {
             for (int i = 0; i < 2; i++)
@@ -19,7 +19,7 @@ public class Pawn : ChessItem
                 int row = _row + i + 1;
                 if (!IsThereChessItemAt(row, _col))
                 {
-                    _possibleMoves.Add(new int[] { row, _col });
+                    _legalMoves.Add(new int[] { row, _col }); // Use AddLegalPosition
                 } else
                 {
                     break;
@@ -30,7 +30,7 @@ public class Pawn : ChessItem
             int row = _row + 1;
             if (!IsThereChessItemAt(row, _col) && row <= 7)
             {
-                _possibleMoves.Add(new int[] { row, _col });
+                _legalMoves.Add(new int[] { row, _col });
             }
         }
     }

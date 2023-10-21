@@ -47,7 +47,7 @@ namespace Chess.Scripts.Core {
             {
                 _item.CalculateLegalMoves(); // Calculate and return at the same time?
                 _item.CalculateAttackMoves();
-                foreach (int[] coordinate in _item.PossibleMoves())
+                foreach (int[] coordinate in _item.LegalMoves())
                 {
                     ChessBoardPlacementHandler.Instance.Highlight(coordinate[0], coordinate[1]);
                 }

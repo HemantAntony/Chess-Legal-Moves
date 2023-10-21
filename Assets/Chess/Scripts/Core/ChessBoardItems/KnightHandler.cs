@@ -11,15 +11,15 @@ public class Knight : ChessItem
 
     public override void CalculateLegalMoves()
     {
-        _possibleMoves.Clear();
-        AddPosition(_row + 2, _col + 1);
-        AddPosition(_row + 2, _col - 1);
-        AddPosition(_row - 2, _col + 1);
-        AddPosition(_row - 2, _col - 1);
-        AddPosition(_row + 1, _col + 2);
-        AddPosition(_row - 1, _col + 2);
-        AddPosition(_row + 1, _col - 2);
-        AddPosition(_row - 1, _col - 2);
+        _legalMoves.Clear();
+        AddLegalPosition(_row + 2, _col + 1);
+        AddLegalPosition(_row + 2, _col - 1);
+        AddLegalPosition(_row - 2, _col + 1);
+        AddLegalPosition(_row - 2, _col - 1);
+        AddLegalPosition(_row + 1, _col + 2);
+        AddLegalPosition(_row - 1, _col + 2);
+        AddLegalPosition(_row + 1, _col - 2);
+        AddLegalPosition(_row - 1, _col - 2);
     }
 
     public override void CalculateAttackMoves()

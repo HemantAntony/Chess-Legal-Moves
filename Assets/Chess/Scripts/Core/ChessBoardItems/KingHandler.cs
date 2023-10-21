@@ -11,15 +11,15 @@ public class King : ChessItem
 
     public override void CalculateLegalMoves()
     {
-        _possibleMoves.Clear();
-        AddPosition(_row + 1, _col - 1);
-        AddPosition(_row + 1, _col);
-        AddPosition(_row + 1, _col + 1);
-        AddPosition(_row, _col + 1);
-        AddPosition(_row - 1, _col + 1);
-        AddPosition(_row - 1, _col);
-        AddPosition(_row - 1, _col - 1);
-        AddPosition(_row, _col - 1);
+        _legalMoves.Clear();
+        AddLegalPosition(_row + 1, _col - 1);
+        AddLegalPosition(_row + 1, _col);
+        AddLegalPosition(_row + 1, _col + 1);
+        AddLegalPosition(_row, _col + 1);
+        AddLegalPosition(_row - 1, _col + 1);
+        AddLegalPosition(_row - 1, _col);
+        AddLegalPosition(_row - 1, _col - 1);
+        AddLegalPosition(_row, _col - 1);
 
         if (_row == 0) // Castling
         {
@@ -27,7 +27,7 @@ public class King : ChessItem
             {
                 if (col == 0 && GetChessItemAt(_row, col).GetChessItemAtType() == "Rook")
                 {
-                    AddPosition(_row, 2);
+                    AddLegalPosition(_row, 2);
                 } else if (IsThereChessItemAt(_row, col))
                 {
                     break;
@@ -38,7 +38,7 @@ public class King : ChessItem
             {
                 if (col == 7 && GetChessItemAt(_row, col).GetChessItemAtType() == "Rook")
                 {
-                    AddPosition(_row, 6);
+                    AddLegalPosition(_row, 6);
                 } else if (IsThereChessItemAt(_row, col))
                 {
                     break;

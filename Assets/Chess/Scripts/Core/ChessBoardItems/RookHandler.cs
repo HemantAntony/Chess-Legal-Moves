@@ -11,10 +11,10 @@ public class Rook : ChessItem
 
     public override void CalculateLegalMoves()
     {
-        _possibleMoves.Clear();
+        _legalMoves.Clear();
         for (int row = _row + 1; row <= 7; row++)
         {
-            if (!AddPosition(row, _col))
+            if (!AddLegalPosition(row, _col))
             {
                 break;
             }
@@ -22,7 +22,7 @@ public class Rook : ChessItem
 
         for (int row = _row - 1; row >= 0; row--)
         {
-            if (!AddPosition(row, _col))
+            if (!AddLegalPosition(row, _col))
             {
                 break;
             }
@@ -30,7 +30,7 @@ public class Rook : ChessItem
 
         for (int col = _col + 1; col <= 7; col++)
         {
-            if (!AddPosition(_row, col))
+            if (!AddLegalPosition(_row, col))
             {
                 break;
             }
@@ -38,7 +38,7 @@ public class Rook : ChessItem
 
         for (int col = _col - 1; col >= 0; col--)
         {
-            if (!AddPosition(_row, col))
+            if (!AddLegalPosition(_row, col))
             {
                 break;
             }

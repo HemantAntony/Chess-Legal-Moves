@@ -10,7 +10,7 @@ public abstract class ChessItem // Add to name space Chess Core?
 
     private string _type; // Implement Enum
     protected int _row, _col;
-    protected List<int[]> _possibleMoves = new List<int[]>();
+    protected List<int[]> _legalMoves = new List<int[]>();
     protected List<int[]> _attackMoves = new List<int[]>();
 
     public ChessItem(string type, int row, int col)
@@ -32,9 +32,9 @@ public abstract class ChessItem // Add to name space Chess Core?
         _col = col;
     }
 
-    public List<int[]> PossibleMoves()
+    public List<int[]> LegalMoves()
     {
-        return _possibleMoves;
+        return _legalMoves;
     }
 
     public List<int[]> AttackMoves()
@@ -69,11 +69,11 @@ public abstract class ChessItem // Add to name space Chess Core?
         return false;
     }
 
-    protected bool AddPosition(int row, int col) // Rename?
+    protected bool AddLegalPosition(int row, int col)
     {
         if (row >= 0 && row <= 7 && col >= 0 && col <= 7 && !IsThereChessItemAt(row, col))
         {
-            _possibleMoves.Add(new int[] { row, col });
+            _legalMoves.Add(new int[] { row, col });
             return true;
         }
         return false;
