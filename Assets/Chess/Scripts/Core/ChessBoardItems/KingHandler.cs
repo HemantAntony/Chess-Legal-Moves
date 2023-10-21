@@ -25,9 +25,9 @@ public class King : ChessItem
         {
             for (int col = _col - 1; col >= 0; col--)
             {
-                if (col == 0 && GetChessItemAt(_row, col).GetChessItemType() == ChessItem.ChessItemType.Rook)
+                if (col == 0 && GetChessItemAt(_row, col).GetChessItemType() == ChessItemType.Rook)
                 {
-                    AddLegalPosition(_row, 2);
+                    AddLegalPosition(_row, 1);
                 } else if (IsThereChessItemAt(_row, col))
                 {
                     break;
@@ -36,9 +36,9 @@ public class King : ChessItem
 
             for (int col = _col + 1; col <= 7; col++)
             {
-                if (col == 7 && GetChessItemAt(_row, col).GetChessItemType() == ChessItem.ChessItemType.Rook)
+                if (col == 7 && GetChessItemAt(_row, col).GetChessItemType() == ChessItemType.Rook)
                 {
-                    AddLegalPosition(_row, 6);
+                    AddLegalPosition(_row, 5);
                 } else if (IsThereChessItemAt(_row, col))
                 {
                     break;
