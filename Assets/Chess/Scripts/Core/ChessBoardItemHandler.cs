@@ -21,14 +21,9 @@ public abstract class ChessItem // Add to name space Chess Core?
         _chessItems.Add(this);
     }
 
-    public string GetChessItemType() // Use get; set
+    public string GetChessItemType()
     {
         return _type;
-    }
-
-    public void SetChessItemType(string type)
-    {
-        _type = type;
     }
 
     public void SetPosition(int row, int col)
