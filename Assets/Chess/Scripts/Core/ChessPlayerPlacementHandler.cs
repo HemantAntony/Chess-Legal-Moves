@@ -29,11 +29,6 @@ namespace Chess.Scripts.Core {
             transform.position = ChessBoardPlacementHandler.Instance.GetTile(row, column).transform.position;
         }
 
-        public ChessItem Item()
-        {
-            return _item;
-        }
-
         private void Start() {
             UpdatePosition();
             _item = ChessItem.New(gameObject.tag, row, column);

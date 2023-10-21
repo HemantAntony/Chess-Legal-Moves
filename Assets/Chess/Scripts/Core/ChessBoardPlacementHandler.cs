@@ -12,8 +12,6 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour {
     [SerializeField] private GameObject _highlightPrefab;
     [SerializeField] private GameObject _attackHighlightPrefab;
 
-    [SerializeField] private Vector4[] _preMoves;
-
     private GameObject[,] _chessBoard;
 
     internal static ChessBoardPlacementHandler Instance;
@@ -73,30 +71,6 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour {
         }
 
         Instantiate(_attackHighlightPrefab, tile.transform.position, Quaternion.identity, tile.transform);
-    }
-
-
-    private void Start()
-    {
-        StartCoroutine(MovePositions());
-    }
-
-    private IEnumerator MovePositions()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        foreach (Vector4 preMove in _preMoves)
-        {
-            MovePieceHandler(ChessPlayerPlacementHandler.GetHandler((int)preMove.x, (int)preMove.y), (int)preMove.z, (int)preMove.w);
-        }
-    }
-
-    private void MovePieceHandler(ChessPlayerPlacementHandler handler, int row, int col)
-    {
-        handler.row = row;
-        handler.column = col;
-        handler.UpdatePosition();
-        handler.Item().SetPosition(row, col);
     }
 
     #region Highlight Testing
