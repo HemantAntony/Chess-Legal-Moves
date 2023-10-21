@@ -9,7 +9,7 @@ public class Queen : ChessItem
     {
     }
 
-    public override void CalculateLegalMoves() // Make efficient
+    public override void CalculateLegalMoves()
     {
         _legalMoves.Clear();
         for (int row = _row + 1; row <= 7; row++)

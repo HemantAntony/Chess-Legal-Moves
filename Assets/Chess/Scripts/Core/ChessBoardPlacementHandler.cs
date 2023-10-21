@@ -76,14 +76,6 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour {
     }
 
 
-    private void MovePieceHandler(ChessPlayerPlacementHandler handler, int row, int col)
-    {
-        handler.row = row;
-        handler.column = col;
-        handler.UpdatePosition();
-        handler.Item().SetPosition(row, col);
-    }
-
     private void Start()
     {
         StartCoroutine(MovePositions());
@@ -93,10 +85,18 @@ public sealed class ChessBoardPlacementHandler : MonoBehaviour {
     {
         yield return new WaitForSeconds(0.5f);
 
-        foreach(Vector4 preMove in _preMoves)
+        foreach (Vector4 preMove in _preMoves)
         {
-            MovePieceHandler(ChessPlayerPlacementHandler.GetHandler((int) preMove.x, (int) preMove.y), (int) preMove.z, (int) preMove.w);
+            MovePieceHandler(ChessPlayerPlacementHandler.GetHandler((int)preMove.x, (int)preMove.y), (int)preMove.z, (int)preMove.w);
         }
+    }
+
+    private void MovePieceHandler(ChessPlayerPlacementHandler handler, int row, int col)
+    {
+        handler.row = row;
+        handler.column = col;
+        handler.UpdatePosition();
+        handler.Item().SetPosition(row, col);
     }
 
     #region Highlight Testing

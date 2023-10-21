@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ChessItem // Add to name space Chess Core?, Move to different location
+public abstract class ChessItem
 {
     protected ChessItemType _type;
     protected int _row, _col;
@@ -76,7 +76,7 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
         return New(TagToChessItemType(tag), row, col);
     }
 
-    public static ChessItem GetChessItemAt(int row, int col) // Incorporate with IsThereChessItemAt
+    public static ChessItem GetChessItemAt(int row, int col)
     {
         foreach (ChessItem chessItem in _chessItems)
         {
