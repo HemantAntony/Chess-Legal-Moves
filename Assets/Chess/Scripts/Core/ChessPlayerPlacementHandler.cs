@@ -36,7 +36,7 @@ namespace Chess.Scripts.Core {
 
         private void Start() {
             UpdatePosition();
-            _item = ChessBoardItemHandler.MakeChessItem(gameObject.tag, row, column);
+            _item = ChessBoardItemHandler.New(gameObject.tag, row, column);
             _handlers.Add(this);
         }
 

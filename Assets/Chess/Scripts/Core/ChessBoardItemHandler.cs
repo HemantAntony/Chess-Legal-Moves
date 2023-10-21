@@ -12,6 +12,15 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
     protected List<int[]> _attackMoves = new List<int[]>();
 
     private static List<ChessItem> _chessItems = new List<ChessItem>();
+    private static readonly Dictionary<string, ChessItemType> chessItemTypes = new Dictionary<string, ChessItemType>() {
+        { "King", ChessItemType.King },
+        { "Queen", ChessItemType.Queen },
+        { "Bishop", ChessItemType.Bishop },
+        { "Knight", ChessItemType.Knight },
+        { "Rook", ChessItemType.Rook },
+        { "Pawn", ChessItemType.Pawn },
+        { "Enemy", ChessItemType.Enemy }
+    };
 
     public ChessItem(ChessItemType type, int row, int col)
     {
@@ -30,6 +39,41 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
         Rook,
         Pawn,
         Enemy
+    }
+
+    public static ChessItemType TagToChessItemType(string tag)
+    {
+        return chessItemTypes[tag];
+    }
+
+    public static ChessItem New(ChessItemType chessItemType, int row, int col)
+    {
+        switch (chessItemType)
+        {
+            case ChessItemType.Pawn:
+                return new Pawn(chessItemType, row, col);
+            case ChessItemType.King:
+                return new King(chessItemType, row, col);
+            case ChessItemType.Queen:
+                return new Queen(chessItemType, row, col);
+            case ChessItemType.Bishop:
+                return new Bishop(chessItemType, row, col);
+            case ChessItemType.Knight:
+                return new Knight(chessItemType, row, col);
+            case ChessItemType.Rook:
+                return new Rook(chessItemType, row, col);
+            case ChessItemType.Enemy:
+                return new Enemy(chessItemType, row, col);
+            default:
+                break;
+        }
+
+        return null;
+    }
+
+    public static ChessItem New(string tag, int row, int col)
+    {
+        return New(TagToChessItemType(tag), row, col);
     }
 
     public static ChessItem GetChessItemAt(int row, int col) // Move function? Incorporate with IsThereChessItemAt
@@ -89,7 +133,7 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
 
     protected void AddAttackPosition(int row, int col)
     {
-        if (row < 0 || row > 7 || col < 0 || col > 7 || !IsThereChessItemAt(row, col) || GetChessItemAt(row, col).GetChessItemType() != ChessItem.ChessItemType.Enemy)
+        if (row < 0 || row > 7 || col < 0 || col > 7 || !IsThereChessItemAt(row, col) || GetChessItemAt(row, col).GetChessItemType() != ChessItemType.Enemy)
         {
             return;
         }
@@ -98,52 +142,4 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
 
     public abstract void CalculateLegalMoves();
     public abstract void CalculateAttackMoves();
-}
-
-public class ChessBoardItemHandler : MonoBehaviour
-{
-    private static readonly Dictionary<string, ChessItem.ChessItemType> chessItemTypes = new Dictionary<string, ChessItem.ChessItemType>() {
-        { "King", ChessItem.ChessItemType.King },
-        { "Queen", ChessItem.ChessItemType.Queen },
-        { "Bishop", ChessItem.ChessItemType.Bishop },
-        { "Knight", ChessItem.ChessItemType.Knight },
-        { "Rook", ChessItem.ChessItemType.Rook },
-        { "Pawn", ChessItem.ChessItemType.Pawn },
-        { "Enemy", ChessItem.ChessItemType.Enemy }
-    };
-
-    public static ChessItem.ChessItemType TagToChessItemType(string tag)
-    {
-        return chessItemTypes[tag];
-    }
-
-    public static ChessItem MakeChessItem(ChessItem.ChessItemType chessItemType, int row, int col)
-    {
-        switch (chessItemType)
-        {
-            case ChessItem.ChessItemType.Pawn:
-                return new Pawn(chessItemType, row, col);
-            case ChessItem.ChessItemType.King:
-                return new King(chessItemType, row, col);
-            case ChessItem.ChessItemType.Queen:
-                return new Queen(chessItemType, row, col);
-            case ChessItem.ChessItemType.Bishop:
-                return new Bishop(chessItemType, row, col);
-            case ChessItem.ChessItemType.Knight:
-                return new Knight(chessItemType, row, col);
-            case ChessItem.ChessItemType.Rook:
-                return new Rook(chessItemType, row, col);
-            case ChessItem.ChessItemType.Enemy:
-                return new Enemy(chessItemType, row, col);
-            default:
-                break;
-        }
-
-        return null;
-    }
-
-    public static ChessItem MakeChessItem(string tag, int row, int col)
-    {
-        return MakeChessItem(TagToChessItemType(tag), row, col);
-    }
 }
