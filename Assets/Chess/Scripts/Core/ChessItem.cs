@@ -76,7 +76,7 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
         return New(TagToChessItemType(tag), row, col);
     }
 
-    public static ChessItem GetChessItemAt(int row, int col) // Move function? Incorporate with IsThereChessItemAt
+    public static ChessItem GetChessItemAt(int row, int col) // Incorporate with IsThereChessItemAt
     {
         foreach (ChessItem chessItem in _chessItems)
         {
@@ -88,7 +88,7 @@ public abstract class ChessItem // Add to name space Chess Core?, Move to differ
         return null;
     }
 
-    public static bool IsThereChessItemAt(int row, int col) // Move function?
+    public static bool IsThereChessItemAt(int row, int col)
     {
         foreach (ChessItem chessItem in _chessItems)
         {

@@ -45,7 +45,7 @@ namespace Chess.Scripts.Core {
             ChessBoardPlacementHandler.Instance.ClearHighlights();
             if (_item != null)
             {
-                _item.CalculateLegalMoves(); // Calculate and return at the same time?
+                _item.CalculateLegalMoves();
                 _item.CalculateAttackMoves();
                 foreach (int[] coordinate in _item.LegalMoves())
                 {

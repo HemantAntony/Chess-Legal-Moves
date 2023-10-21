@@ -9,7 +9,7 @@ public class Enemy : ChessItem
     {
     }
 
-    public override void CalculateLegalMoves() // Find better way to implement this
+    public override void CalculateLegalMoves()
     {
     }
 
