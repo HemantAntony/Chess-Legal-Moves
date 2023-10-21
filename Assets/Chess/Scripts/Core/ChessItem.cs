@@ -133,6 +133,17 @@ public abstract class ChessItem
         _attackMoves.Add(new int[] { row, col });
     }
 
+    protected void AddLegalPositions(Vector2Int direction)
+    {
+        for (int row = _row + direction.x, col = _col + direction.y; row >= 0 && row <= 7 && col >= 0 && col <= 7; row += direction.x, col += direction.y)
+        {
+            if (!AddLegalPosition(row, col))
+            {
+                break;
+            }
+        }
+    }
+
     public abstract void CalculateLegalMoves();
     public abstract void CalculateAttackMoves();
 }

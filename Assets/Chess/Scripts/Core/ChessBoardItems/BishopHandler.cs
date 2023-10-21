@@ -13,37 +13,11 @@ public class Bishop : ChessItem
     public override void CalculateLegalMoves()
     {
         _legalMoves.Clear();
-        for (int row = _row + 1, col = _col + 1; row <= 7 && col <= 7; row++, col++)
-        {
-            if (!AddLegalPosition(row, col))
-            {
-                break;
-            }
-        }
 
-        for (int row = _row - 1, col = _col + 1; row >= 0 && col <= 7; row--, col++)
-        {
-            if (!AddLegalPosition(row, col))
-            {
-                break;
-            }
-        }
-
-        for (int row = _row - 1, col = _col - 1; row >= 0 && col >= 0; row--, col--)
-        {
-            if (!AddLegalPosition(row, col))
-            {
-                break;
-            }
-        }
-
-        for (int row = _row + 1, col = _col - 1; row <= 7 && col >= 0; row++, col--)
-        {
-            if (!AddLegalPosition(row, col))
-            {
-                break;
-            }
-        }
+        AddLegalPositions(new Vector2Int(1, 1));
+        AddLegalPositions(new Vector2Int(-1, 1));
+        AddLegalPositions(new Vector2Int(-1, -1));
+        AddLegalPositions(new Vector2Int(1, -1));
     }
 
     public override void CalculateAttackMoves()
