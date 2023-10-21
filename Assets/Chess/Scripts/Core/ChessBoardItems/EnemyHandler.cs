@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : ChessItem
 {
-    public Enemy(string type, int row, int col):base(type, row, col)
+    public Enemy(ChessItemType type, int row, int col):base(type, row, col)
     {
     }
 

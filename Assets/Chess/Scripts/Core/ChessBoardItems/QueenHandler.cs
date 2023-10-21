@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Queen : ChessItem
 {
-    public Queen(string type, int row, int col) : base(type, row, col)
+    public Queen(ChessItemType type, int row, int col) : base(type, row, col)
     {
     }
 

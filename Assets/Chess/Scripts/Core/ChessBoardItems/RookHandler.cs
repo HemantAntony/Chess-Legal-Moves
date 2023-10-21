@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Rook : ChessItem
 {
-    public Rook(string type, int row, int col) : base(type, row, col)
+    public Rook(ChessItemType type, int row, int col) : base(type, row, col)
     {
     }
 

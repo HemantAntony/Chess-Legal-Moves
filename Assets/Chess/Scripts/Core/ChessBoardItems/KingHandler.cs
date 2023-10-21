@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class King : ChessItem
 {
-    public King(string type, int row, int col) : base(type, row, col)
+    public King(ChessItemType type, int row, int col) : base(type, row, col)
     {
     }
 
@@ -25,7 +25,7 @@ public class King : ChessItem
         {
             for (int col = _col - 1; col >= 0; col--)
             {
-                if (col == 0 && GetChessItemAt(_row, col).GetChessItemAtType() == "Rook")
+                if (col == 0 && GetChessItemAt(_row, col).GetChessItemType() == ChessItem.ChessItemType.Rook)
                 {
                     AddLegalPosition(_row, 2);
                 } else if (IsThereChessItemAt(_row, col))
@@ -36,7 +36,7 @@ public class King : ChessItem
 
             for (int col = _col + 1; col <= 7; col++)
             {
-                if (col == 7 && GetChessItemAt(_row, col).GetChessItemAtType() == "Rook")
+                if (col == 7 && GetChessItemAt(_row, col).GetChessItemType() == ChessItem.ChessItemType.Rook)
                 {
                     AddLegalPosition(_row, 6);
                 } else if (IsThereChessItemAt(_row, col))

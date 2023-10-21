@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Bishop : ChessItem
 {
-    public Bishop(string type, int row, int col) : base(type, row, col)
+    public Bishop(ChessItemType type, int row, int col) : base(type, row, col)
     {
     }
 
